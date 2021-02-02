@@ -25,7 +25,7 @@
 
     $.post("api/ckacc.php",{acc},function(res){
       if(res=='1'){
-        $.post("api/ckacc.php",{acc,pw},function(r){
+        $.post("api/ckpw.php",{acc,pw},function(r){
           if(r=='1'){
             location.href="index.php";
           }else{
