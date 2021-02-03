@@ -5,6 +5,7 @@ $ck=$Mem->count(['acc'=>$acc,'pw'=>$pw]);
 
 if($ck){
   echo 1;
+  $_SESSION['login']=$acc;
 }else{
   echo 0;
 }
