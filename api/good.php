@@ -4,7 +4,11 @@ switch($_POST['type']){
     $Log->save([
   'acc'=>$_POST['acc'],
   'news'=>$_POST['news']
-    ]);
+  ]);
+  $news=$News->find($_POST['news']);
+  $news['good']++;
+  $News->save($news);
+  
   break;
 
   case "2":
@@ -12,6 +16,9 @@ switch($_POST['type']){
   'acc'=>$_POST['acc'],
   'news'=>$_POST['news']
     ]);
+  $news=$News->find($_POST['news']);
+  $news['good']--;
+  $News->save($news);
     break;
 }
 
