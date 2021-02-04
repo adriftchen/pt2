@@ -7,7 +7,7 @@
         <td width="20%"></td>
     </tr>
     <?php
-       $count=$News->count();
+       $count=$News->count(['sh'=>1]);
        $div=5;
        $pages=ceil($count/$div);
        $now=(isset($_GET['p']))?$_GET['p']:1;
@@ -20,7 +20,7 @@
         <td class="header" style="cursor:pointer;color:blue;text-decoration:underline" id="t<?=$news['id'];?>"><?=$news['title'];?></td>
         <td>
             <span class="title"><?=mb_substr($news['title'],0,30,'utf8');?>...</span>
-            <span class="texy" style="display:none"><?=nl2br($news['text']);?></span>
+            <span class="text" style="display:none"><?=nl2br($news['text']);?></span>
         </td>
         <td></td>
     </tr>
