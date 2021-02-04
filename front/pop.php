@@ -68,7 +68,7 @@ if(($now+1)<=$pages){
 </fieldset>
 <script>
 $(".header").hover(function(){
-    $(this).next().children('.title').toggle()
+    $(this).next().children('.text').toggle()
 })
 $(".tt").hover(function(){
     $(this).children.('.text').toggle()
