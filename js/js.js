@@ -16,7 +16,7 @@ function good(news,acc,type)
 		else
 		{
 			$("#vie"+news).text($("#vie"+news).text()*1-1)
-			$("#news"+news).text("收回讚").attr("onclick","good('"+news+"','"+acc+"','1')")
+			$("#news"+news).text("讚").attr("onclick","good('"+news+"','"+acc+"','1')")
 		}
 
 	})

@@ -17,12 +17,29 @@
     foreach($all as $news){
     ?>
     <tr>
-        <td class="header" style="cursor:pointer;color:blue;text-decoration:underline" id="t<?=$news['id'];?>"><?=$news['title'];?></td>
+        <td class="header"><?=$news['title'];?></td>
         <td>
             <span class="title"><?=mb_substr($news['title'],0,30,'utf8');?>...</span>
             <span class="text" style="display:none"><?=nl2br($news['text']);?></span>
         </td>
-        <td></td>
+        <td>
+        <?php
+
+        if(!empty($_SESSION['login'])){
+            $ck=$Log->count(['acc'=>$_SESSION['login'],'news'=>$news['id']]);
+            if($ck){
+                ?>
+                <a href='#' id="news<?=$news['id'];?>" onclick="good('<?=$news['id'];?>','<?=$_SESSION['login'];?>','2')">收回讚</a>
+                <?php
+                }else{
+                ?>
+                    <a href='#' id="news<?=$news['id'];?>" onclick="good('<?=$news['id'];?>','<?=$_SESSION['login'];?>','1')">讚</a>
+                    <?php
+                }
+        }
+
+        ?>
+        </td>
     </tr>
     <?php
     }
