@@ -47,8 +47,8 @@ if(($now+1)<=$pages){
 </div>
 </fieldset>
 <script>
-$(".header").on("click",funciton(){
-    $(this).next().chiildren('.title').toggel
-    $(this).next().chiildren('.text').toggel
+$(".header").on("click",function(){
+    $(this).next().children('.title').toggle()
+    $(this).next().children('.text').toggle()
 })
 </script>

@@ -101,6 +101,7 @@ class DB{
       $sql .= " where " .implode(" && ",$tmp);
     }else{
       $sql .= " where `id`='{$id}' ";
+      // echo $sql;
     }
     return $this->pdo->exec($sql);
   }
