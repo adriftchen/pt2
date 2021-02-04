@@ -18,12 +18,12 @@
     ?>
     <tr>
         <td class="header"><?=$news['title'];?></td>
-        <td style="position:relative">
+        <td class="tt" style="position:relative">
             <span class="title"><?=mb_substr($news['text'],0,30,'utf8');?>...</span>
-            <span class="text" style="background:rgb(51,51,51,0.8);color:#FFF;min-height:100px;width:300px;position:absolute;z-index:999;overflow:auto;display:none">
+            <div class="text all">
             <h3><?=$typeStr[$news['type']];?></h3>
             <?=nl2br($news['text']);?>
-            </span>
+            </div>
         </td>
         <td>
         <span id="vie<?=$news['id'];?>"><?=$news['good'];?></span>個人說<img src="icon/02B03.jpg" style="width:20px;height:20px">
@@ -69,5 +69,8 @@ if(($now+1)<=$pages){
 <script>
 $(".header").hover(function(){
     $(this).next().children('.title').toggle()
+})
+$(".tt").hover(function(){
+    $(this).children.('.text').toggle()
 })
 </script>
