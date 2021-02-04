@@ -1,4 +1,4 @@
-<form action="api.editnews.php" method="post">
+<form action="api/editnews.php" method="post">
 <table class="ct" style="width:100%">
     <tr>
         <td width="10%">編號</td>
@@ -27,7 +27,6 @@
     <?php
     }
     ?>
-<a href=""></a>
 </table>
 <div class="ct">
 <?php
