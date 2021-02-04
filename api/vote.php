@@ -7,5 +7,5 @@ $option=$Que->find($_POST['vote']);
 $option['count']++;
 $Que->save($option);
 
-to("../index.php?do=result");
+to("../index.php?do=result&id={$subject['id']}");
 ?>
